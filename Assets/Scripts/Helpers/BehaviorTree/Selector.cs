@@ -1,0 +1,33 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Helpers.BehaviorTree
+{
+    public class Selector : Node
+    {
+        private List<Node> nodes = new();
+
+        public Selector(List<Node> nodes) { this.nodes = nodes; }
+
+        public override NodeState Evaluate()
+        {
+            foreach (var node in nodes)
+            {
+                switch (node.Evaluate())
+                {
+                    case NodeState.Running:
+                        state = NodeState.Running;
+                        return state;
+                    case NodeState.Success:
+                        state = NodeState.Success;
+                        return state;
+                    case NodeState.Failure:
+                        continue; // Coba node berikutnya
+                }
+            }
+            state = NodeState.Failure;
+            return state;
+        }
+    }
+    
+}
