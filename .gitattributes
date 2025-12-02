@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+D:/Unity filter=lfs diff=lfs merge=lfs -text
+Project/Final-Project-Yaser/Assets/CartoonTracksPack1/Track1/Textures/road_normal.png filter=lfs diff=lfs merge=lfs -text
+D:/Unity filter=lfs diff=lfs merge=lfs -text
+Project/Final-Project-Yaser/Assets/CartoonTracksPack1/Track1/Textures/road.psd filter=lfs diff=lfs merge=lfs -text
